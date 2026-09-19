@@ -52,7 +52,7 @@ jobs:
 
       - name: Run Issue Monitoring Agent
         env:
-          GITHUB_TOKEN: ${{ secrets.ADK_TRIAGE_AGENT }}
+          GITHUB_TOKEN: ${{ secrets.ADK_TRIAGE_AGENT || github.token }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           OWNER: ${{ github.repository_owner }}
           REPO: ${{ github.event.repository.name }}
